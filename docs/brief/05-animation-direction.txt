@@ -1,0 +1,181 @@
+DIRECCIÓN DE ANIMACIONES — GSAP / SCROLLTRIGGER
+
+Objetivo:
+Crear una experiencia fluida, premium y guiada, inspirada en Lanserhof, Biograph y sitios executive-health, pero con CTAs muy visibles y comerciales.
+
+Stack obligatorio:
+- gsap
+- @gsap/react
+- ScrollTrigger
+- Lenis para smooth scroll si se puede integrar bien
+
+Skills a leer/aplicar:
+- .claude/skills/gsap-core/SKILL.md
+- .claude/skills/gsap-react/SKILL.md
+- .claude/skills/gsap-scrolltrigger/SKILL.md
+- .claude/skills/gsap-timeline/SKILL.md
+- .claude/skills/gsap-performance/SKILL.md
+- .claude/skills/gsap-plugins/SKILL.md
+- .claude/skills/gsap-utils/SKILL.md
+
+También puede leer las mismas skills en .agents/skills si están disponibles.
+
+============================================================
+REGLAS TÉCNICAS GSAP
+============================================================
+
+- Crear src/lib/gsap.js para registrar GSAP y ScrollTrigger.
+- Usar @gsap/react y useGSAP.
+- Usar refs y scope por componente.
+- Evitar selectores globales sin scope.
+- Limpiar animaciones correctamente.
+- Usar gsap.context o useGSAP cleanup.
+- Usar ScrollTrigger.refresh() si hay assets/videos que cambian layout.
+- Respetar prefers-reduced-motion.
+- En mobile, simplificar animaciones complejas.
+- No animar propiedades costosas si se puede usar transform/opacity.
+- No usar animaciones infinitas pesadas salvo CTA/flechas.
+
+============================================================
+ANIMACIONES GENERALES
+============================================================
+
+Page intro:
+- Revelar logo o marca ARETÉ con opacity + y + clip-path.
+- Duración sobria, no loader largo.
+- Luego revelar hero.
+
+Hero:
+- Headline aparece por líneas o palabras.
+- Highlight “+15 kg...” con subrayado naranja animado.
+- Subtítulo con fade-up suave.
+- Video reveal con mask/clip-path.
+- Leve parallax en video o poster.
+- CTA aparece con escala suave + glow.
+- Scroll arrow rebota.
+
+Video / proof:
+- Frame aparece con border draw o clip-path.
+- Imagen/video con parallax muy leve.
+
+Casos de éxito:
+- Cards con stagger.
+- Hover con scale sutil y overlay.
+- Si es carrusel horizontal, movimiento suave, no mareante.
+
+Testimonios:
+- Carrusel con transición fluida.
+- Cards con fade/slide horizontal.
+- Estrellas aparecen con stagger.
+
+Pain section:
+- Título entra con clip reveal.
+- Cada dolor aparece secuencialmente al hacer scroll.
+- Ícono X puede entrar con pop/rotate muy sutil.
+
+Outcomes:
+- Puede usar pinned section si queda bien.
+- Cada outcome entra como escena.
+- Número grande puede tener parallax/scale sutil.
+- Imagen con parallax lento.
+- Texto con fade-up.
+
+Diferenciadores:
+- Cards aparecen con stagger.
+- Hover con glow interno y translateY leve.
+- Icono circular puede tener micro-pulse.
+
+About Lucas:
+- Imagen con parallax vertical lento.
+- Bullets revelados uno por uno.
+- Texto destacado final con línea o check animado.
+
+Booking:
+- Fondo cálido aparece gradualmente.
+- Embed entra con mask reveal.
+- CTA visual antes del embed.
+
+FAQ:
+- Accordion con height auto animado.
+- Rotación suave del icono.
+- Hover sutil.
+
+============================================================
+CTA / BOTONES MUY LLAMATIVOS
+============================================================
+
+Crear componente MagneticCTA.jsx.
+
+Debe incluir:
+- Fondo #FF6A00.
+- Texto blanco.
+- Icono/flecha circular interna.
+- Glow naranja externo.
+- Pulso sutil constante.
+- Shimmer diagonal que cruza el botón cada pocos segundos.
+- Hover magnetic.
+- Hover scale leve.
+- Active state.
+- Focus-visible accesible.
+
+Animaciones del CTA:
+- idle pulse: scale 1 -> 1.025 -> 1
+- glow: box-shadow aumenta y baja
+- shimmer: pseudo-element o span interno que cruza con transform translateX
+- icon: flecha se desplaza 2-4px en hover o en loop sutil
+
+Importante:
+Los botones deben ser imposibles de no ver.
+Deben moverse, brillar, iluminarse y llamar la atención.
+Pero no deben parecer baratos ni romper la estética premium.
+
+============================================================
+FLECHAS DE GUIADO
+============================================================
+
+Crear componente ScrollArrow.jsx.
+
+Debe incluir:
+- Doble flecha hacia abajo.
+- Color naranja.
+- Glow sutil.
+- Rebote vertical constante.
+- Puede aparecer debajo del CTA o entre secciones.
+- En desktop puede ser más grande.
+- En mobile debe ser visible pero no invadir.
+
+============================================================
+PREFERS REDUCED MOTION
+============================================================
+
+Crear hook useReducedMotion.js.
+Si el usuario prefiere reducir movimiento:
+- Desactivar Lenis.
+- Reducir o eliminar parallax.
+- Dejar fades simples.
+- Desactivar pulses infinitos fuertes.
+- Mantener accesibilidad.
+
+============================================================
+LENIS
+============================================================
+
+Si se usa Lenis:
+- Crear SmoothScrollProvider.jsx.
+- Integrarlo con GSAP ScrollTrigger correctamente.
+- Usar lenis.raf(time).
+- Sincronizar ScrollTrigger.update.
+- Destruir instancia en cleanup.
+- Desactivar en prefers-reduced-motion.
+
+============================================================
+PERFORMANCE
+============================================================
+
+- Lazy load en imágenes no críticas.
+- Hero media preload/poster.
+- Animar opacity/transform/clip-path con moderación.
+- Evitar will-change global.
+- Usar will-change solo en elementos animados principales.
+- No crear ScrollTriggers innecesarios en cada palabra si no hace falta.
+- En mobile, reducir triggers y pinning.

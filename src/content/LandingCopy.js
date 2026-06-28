@@ -1,3 +1,5 @@
+import { testimonialCases } from "../data/TestimonialCases";
+
 export const landingCopy = {
   meta: {
     title: "Lucas Casalins | Programa ARETÉ",
@@ -38,11 +40,6 @@ export const landingCopy = {
       "RESULTADOS",
     ],
   },
-  floatingCta: {
-    label: "TOCÁ AQUÍ",
-    href: "#booking",
-    ariaLabel: "Reservá tu lugar en el Programa ARETÉ",
-  },
   popup: {
     badge: "🔥 ÚLTIMOS CUPOS DISPONIBLES 🔥",
     headline: "Programa ARETÉ",
@@ -69,9 +66,12 @@ export const landingCopy = {
       "Sin pasar hambre con dietas extremas ni rutinas eternas en el gimnasio.",
     logo: "/assets/brand/logo.webp",
     video: {
+      // Horizontal 16:9 VSL. The iframe is only mounted after the user clicks
+      // play, so there is no autoplay on page load.
       embedUrl:
-        "https://fast.wistia.net/embed/iframe/f9hw92egpw?autoplay=1&muted=1&controlsVisibleOnLoad=false&fullscreenButton=true&playbar=true&smallPlayButton=false&volumeControl=false",
-      poster: "/assets/lucas/lucas-3.webp",
+        "https://fast.wistia.net/embed/iframe/f9hw92egpw?autoplay=1&playerColor=ff1e1e",
+      poster: "/assets/lucas/portada.png",
+      posterAlt: "Lucas Casalins — video de presentación del Programa ARETÉ",
     },
     proofStrip: [
       { value: "+2.500", countTo: 2500, label: "personas ayudadas" },
@@ -89,185 +89,22 @@ export const landingCopy = {
       "Sistema privado de transformación física para profesionales de alto rendimiento.",
     media: {
       src: null,
-      poster: "/assets/lucas/testimonial_lucas_1800x2000_torso.webp",
+      poster: "/assets/lucas/lucas-3.webp",
     },
   },
   successCases: {
     eyebrow: "TESTIMONIOS",
     title: "ALGUNOS DE NUESTROS CASOS DE ÉXITO",
-    items: [
-      {
-        name: "GONZALO",
-        role: "Abogado",
-        duration: "3 meses",
-        description: "Abogado y Padre de 3, bajo 20kg en 3 meses de trabajo.",
-        image: "/assets/testimonials/case-01.webp",
-      },
-      {
-        name: "JORGE",
-        role: "Arquitecto",
-        duration: "3 meses",
-        description: "Arquitecto, transformó su cuerpo en 3 meses.",
-        image: "/assets/testimonials/case-02.webp",
-      },
-      {
-        name: "SILVANA",
-        role: "Cargo Ejecutivo",
-        duration: "5 meses",
-        description:
-          "Mamá de 3 y Cargo Ejecutivo, logró estos resultados en 5 meses.",
-        image: "/assets/testimonials/case-03.webp",
-      },
-      {
-        name: "JAVIER",
-        role: "Arquitecto",
-        duration: "3 meses",
-        description:
-          "Arquitecto, le costaba llegar al resultado y logramos esto en 3 meses.",
-        image: "/assets/testimonials/case-04.webp",
-      },
-      {
-        name: "MILAGROS",
-        role: "Profesional ocupada",
-        duration: "3 meses",
-        description:
-          "Trabaja 10 horas por día, logramos adaptarnos a su rutina.",
-        image: "/assets/testimonials/case-05.webp",
-      },
-      {
-        name: "GASTÓN",
-        role: "Empresario",
-        duration: "Competencia",
-        description: "Empresario y entrenador, lo preparamos para competir.",
-        image: "/assets/testimonials/case-06.webp",
-      },
-      {
-        name: "SOL",
-        role: "Entrenadora",
-        duration: "Proceso completo",
-        description: "Entrenadora, con el equipo logramos los resultados.",
-        image: "/assets/testimonials/case-07.webp",
-      },
-      {
-        name: "JULIETA",
-        role: "Administrativo",
-        duration: "Proceso adaptado",
-        description:
-          "Cargo administrativo, adaptamos el programa a su rutina.",
-        image: "/assets/testimonials/case-08.webp",
-      },
-      {
-        name: "FRANCISCO",
-        role: "Dueño de Negocios",
-        duration: "90 días",
-        description:
-          "Dueño de Negocios, no encontraba el tiempo para ejercitarse.",
-        image: "/assets/testimonials/case-09.webp",
-      },
-      {
-        name: "JUANCHI",
-        role: "Atleta",
-        duration: "Competencia",
-        description: "Logramos los objetivos para competir",
-        image: "/assets/testimonials/case-10.webp",
-      },
-      {
-        name: "JUAN PABLO",
-        role: "Arquitecto y Empresario",
-        duration: "3 meses",
-        description:
-          "Arquitecto y Empresario, cambios simples en la alimentación.",
-        image: "/assets/testimonials/case-11.webp",
-      },
-      {
-        name: "MATÍAS",
-        role: "Bancario",
-        duration: "Proceso de competición",
-        description: "Bancario, logramos un físico de competición.",
-        image: "/assets/testimonials/case-12.webp",
-      },
-      {
-        name: "KARIME",
-        role: "Estudiante",
-        duration: "Proceso personalizado",
-        description:
-          "Con 18 años y cambios en su alimentación logramos este físico",
-        image: "/assets/testimonials/case-13.webp",
-      },
-      {
-        name: "MONICA",
-        role: "Madre de 3",
-        duration: "48 años",
-        description:
-          "Madre de 3, con 48 años ganó el mundial NPC de culturismo",
-        image: "/assets/testimonials/case-14.webp",
-      },
-      {
-        name: "FEDERICO",
-        role: "Empresario",
-        duration: "Proceso sostenido",
-        description:
-          "Empresario, poco tiempo pero constancia transformó su vida",
-        image: "/assets/testimonials/case-15.webp",
-      },
-      {
-        name: "SOFÍA",
-        role: "Atleta",
-        duration: "Temporada competitiva",
-        description: "Desde Uruguay con podio en Argentino y Mundial NPC",
-        image: "/assets/testimonials/case-16.webp",
-      },
-      {
-        name: "ROMINA",
-        role: "Mamá de 3",
-        duration: "Temporada competitiva",
-        description:
-          "Mamá de 3, campeóna Argentina y Sudamericana NPC",
-        image: "/assets/testimonials/case-17.webp",
-      },
-      {
-        name: "JESÚS",
-        role: "Relación de Dependencia",
-        duration: "Proceso natural",
-        description:
-          "Trabajo en Relación de Dependecia, compitió natural",
-        image: "/assets/testimonials/case-18.webp",
-      },
-      {
-        name: "MAXI",
-        role: "Empleado Administrativo",
-        duration: "Proceso completo",
-        description:
-          "Empleado Administrativo, modificamos por completo su rutina.",
-        image: "/assets/testimonials/case-19.webp",
-      },
-      {
-        name: "BELÉN",
-        role: "Odontóloga",
-        duration: "Temporada competitiva",
-        description:
-          "Odontóloga y campeóna Argentina y absoluta en Salta",
-        image: "/assets/testimonials/case-20.webp",
-      },
-      {
-        name: "BRANDON",
-        role: "Atleta",
-        duration: "2 meses",
-        description:
-          "En solo dos meses logramos un cuerpo de competición",
-        image: "/assets/testimonials/case-21.webp",
-      },
-      {
-        name: "MARIANO",
-        role: "Agente inmobiliario",
-        duration: "90 días",
-        description: "Agente inmobiliario y papá, con una agenda ocupada.",
-        image: "/assets/testimonials/case-22.webp",
-      },
-    ],
+    subtitle:
+      "Resultados reales de profesionales, empresarios y atletas que confiaron en el método ARETÉ.",
+    items: testimonialCases,
   },
   testimonials: {
     label: "TESTIMONIOS",
+    eyebrow: "EN SUS PALABRAS",
+    title: "Lo que dicen quienes ya transformaron su cuerpo",
+    subtitle:
+      "Historias reales de personas que aplicaron el sistema y recuperaron su físico, su energía y su confianza.",
     items: [
       {
         quote:
@@ -334,6 +171,32 @@ export const landingCopy = {
       },
     ],
   },
+  noSystem: {
+    eyebrow: "EL PROBLEMA REAL",
+    title: "NO TE FALTA DISCIPLINA. TE FALTA UN SISTEMA.",
+    subtitle:
+      "Durante años te hicieron creer que el problema era tu voluntad. Pero si el plan no se adapta a tu vida real, tarde o temprano lo abandonás.",
+    blocks: [
+      {
+        number: "01",
+        heading: "Rutinas genéricas",
+        text: "Planes copiados de internet que no consideran tu cuerpo, tu agenda ni tu punto de partida.",
+      },
+      {
+        number: "02",
+        heading: "Dietas imposibles",
+        text: "Restricciones que podés sostener una semana, pero no una vida real con trabajo, familia y compromisos.",
+      },
+      {
+        number: "03",
+        heading: "Cero acompañamiento",
+        text: "Intentás avanzar solo, sin correcciones, sin ajustes y sin una guía que te mantenga enfocado.",
+      },
+    ],
+    closing:
+      "ARETÉ cambia eso: estructura, seguimiento y personalización para que puedas sostener el cambio.",
+    ctaLabel: "Quiero empezar",
+  },
   pain: {
     title: "SE EXACTAMENTE COMO SE SIENTE CUANDO...",
     items: [
@@ -386,7 +249,7 @@ export const landingCopy = {
   about: {
     eyebrow: "Conocé a Lucas Casalins",
     title: "¿QUIÉN ES LUCAS CASALINS?",
-    image: "/assets/lucas/lucas-1.jpg",
+    image: "/assets/lucas/lucas-2.PNG",
     bullets: [
       "Mi nombre es Lucas Casalins, soy Profesor de Educación Física, Licenciado en Alto Rendimiento Deportivo y atleta con más de 20 torneos regionales, nacionales e internacionales, incluyendo el 1er puesto en un Campeonato Sudamericano (NPC), un Campeonato Argentino (NPC), y un Campeonato Cordobés (NPC).",
       "Además de competir, me formé con más de 65 certificaciones nacionales e internacionales en nutrición, entrenamiento y biomecánica, y soy parte de la cátedra de Biomecánica en la Facultad de Educación Física, lo que me permite unir la ciencia con la práctica real.",
@@ -398,12 +261,14 @@ export const landingCopy = {
   },
   booking: {
     eyebrow: "ESTAS A UN PASO DE CAMBIAR TU VIDA",
-    title: "Programa ARETÉ",
+    title: "Agendá ahora tu diagnóstico gratuito",
+    subtitle: "Elegí tu horario para comenzar tu diagnóstico.",
     formTitle: "Introducir información",
     fullNameLabel: "Nombre Completo *",
     fullNamePlaceholder: "Nombre y Apellido",
     emailLabel: "Correo electrónico *",
     duration: "1 hr",
+    durationNote: "Consulta inicial sin cargo",
     calendarEmbedUrl:
       "https://links.iqautomated.io/widget/booking/hKx898rnz0pwlufZXQuQ",
     calendarEmbedId: "hKx898rnz0pwlufZXQuQ_1782073144314",
@@ -456,10 +321,10 @@ export const landingCopy = {
   footer: {
     logo: "/assets/brand/logo.webp",
     socials: [
-      { label: "Facebook", href: "#" },
-      { label: "Instagram", href: "#" },
-      { label: "YouTube", href: "#" },
-      { label: "LinkedIn", href: "#" },
+      { label: "Facebook", href: "https://www.facebook.com/profile.php?id=100054622772365" },
+      { label: "Instagram", href: "https://www.instagram.com/coach.arete/" },
+      { label: "YouTube", href: "https://www.youtube.com/@coachlucascasalins/videos" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/lucas-casalins-7b8a6a1aa/" },
     ],
   },
 };

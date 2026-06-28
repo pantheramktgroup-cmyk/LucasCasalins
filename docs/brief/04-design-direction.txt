@@ -1,0 +1,181 @@
+DIRECCIÓN VISUAL — LANDING PREMIUM / EXECUTIVE PERFORMANCE
+
+Objetivo:
+Rediseñar la landing de Lucas para que deje de sentirse como una landing fitness genérica y pase a sentirse como una experiencia premium, sofisticada y ejecutiva.
+
+Público objetivo:
+- CEOs.
+- Ejecutivos.
+- Empresarios.
+- Profesionales ocupados.
+- Personas de alto rendimiento.
+- Personas que valoran personalización, tiempo, confianza, discreción y resultados sostenibles.
+
+Concepto general:
+Executive Body Transformation.
+Un sistema privado de transformación física para profesionales de alto rendimiento.
+
+Referencias visuales:
+- Lanserhof: calma, lujo silencioso, scroll fluido, animaciones suaves, mucho espacio, sensación editorial.
+- Biograph: salud/longevidad premium, negro profundo, datos, diagnóstico, cards sofisticadas, estética clínica/high-end.
+- Executive Performance: claridad, autoridad, foco en rendimiento ejecutivo.
+
+NO debe parecer:
+- Landing fitness barata.
+- Funnel agresivo genérico.
+- Página de gimnasio común.
+- Plantilla básica de coach online.
+- Sitio saturado de naranja y rojo.
+
+SÍ debe parecer:
+- Servicio high-ticket.
+- Asesoría privada.
+- Performance física para líderes ocupados.
+- Marca seria, sofisticada y confiable.
+- Experiencia moderna, fluida y cinematográfica.
+
+============================================================
+PALETA
+============================================================
+
+Usar variables CSS:
+
+--bg: #050505;
+--bg-soft: #0B0B0A;
+--bg-warm: #120905;
+--surface: rgba(255,255,255,0.045);
+--surface-strong: rgba(255,255,255,0.075);
+--text: #F7F2EA;
+--muted: #A9A39A;
+--muted-2: #746F67;
+--orange: #FF6A00;
+--orange-soft: #FF8A2A;
+--copper: #C86B28;
+--copper-dark: #6A2E0A;
+--line: rgba(255,255,255,0.14);
+--line-warm: rgba(255,106,0,0.32);
+--danger: #E50914;
+
+Uso recomendado:
+- Fondo principal negro profundo.
+- Gradientes cálidos muy sutiles en secciones clave.
+- Naranja fuerte reservado para CTA, flechas, microacentos y highlights.
+- Cobre para detalles premium, líneas, sombras y borders.
+- Rojo solo para barra de urgencia.
+
+============================================================
+TIPOGRAFÍAS
+============================================================
+
+Usar Google Fonts:
+
+Headings:
+Sora
+- Peso recomendado: 600, 700, 800.
+- Uso: titulares, números, cards, CTA.
+
+Body:
+Manrope
+- Peso recomendado: 400, 500, 600, 700.
+- Uso: párrafos, FAQ, testimonios, textos secundarios.
+
+Fallback:
+sans-serif
+
+Configuración Tailwind:
+fontFamily: {
+  heading: ['Sora', 'sans-serif'],
+  body: ['Manrope', 'sans-serif'],
+}
+
+Estilo tipográfico:
+- Headlines grandes, compactos y con tracking negativo leve.
+- Microtextos uppercase con letter-spacing amplio.
+- Párrafos con line-height generoso.
+- Evitar que todo esté en mayúsculas salvo titulares puntuales.
+- En mobile, no cortar titulares agresivamente.
+
+============================================================
+COMPOSICIÓN
+============================================================
+
+Max width:
+- Contenedor general: 1180px.
+- Secciones muy visuales: hasta 1280px.
+- Texto largo: max-width 760px.
+
+Espaciado:
+- Mucho aire vertical.
+- Padding desktop: 120px a 180px por sección.
+- Padding mobile: 72px a 96px por sección.
+
+Estética:
+- Bordes finos.
+- Glass cards oscuras.
+- Gradientes radiales sutiles.
+- Líneas cobre/naranja finas.
+- Overlays oscuros en imágenes.
+- Sombras suaves, no exageradas excepto CTA.
+- Numeración grande y editorial.
+
+============================================================
+SECCIONES CLAVE
+============================================================
+
+Hero:
+- Debe ser fuerte, premium y cinematográfico.
+- El headline debe dominar.
+- El video debe sentirse como una pieza de prueba/autoridad, no como un embed básico.
+- El CTA debe estar muy visible.
+
+Casos de éxito:
+- Más galería premium que collage de before/after.
+- Usar tarjetas con overlay, nombre y descripción.
+- Puede funcionar como carrusel horizontal o grid editorial.
+
+Dolores:
+- Oscuro, emocional, serio.
+- Las X pueden ser rojas/rosadas, pero integradas a la estética.
+- No hacerlo vulgar ni demasiado chillón.
+
+Outcomes:
+- Números grandes.
+- Cards o escenas alternadas.
+- Imágenes oscurecidas con overlays premium.
+- Mucho aire.
+
+Diferenciadores:
+- Cards con borde cobre/naranja.
+- Icono circular arriba.
+- Texto grande y claro.
+
+About Lucas:
+- Foto grande, editorial, con parallax.
+- Texto con bullets claros.
+- Debe transmitir autoridad y confianza.
+
+Booking:
+- Debe sentirse como aplicación privada al programa.
+- Fondo cobre oscuro/negro cálido.
+- Contenedor del embed premium, no blanco bruto si se puede evitar.
+
+FAQ:
+- Accordion elegante.
+- Bordes naranja/cobre.
+- Apertura suave.
+
+============================================================
+CTAS
+============================================================
+
+Los CTA deben ser más llamativos que el resto del diseño:
+- Fondo naranja sólido.
+- Glow naranja.
+- Shimmer animado.
+- Pulso sutil constante.
+- Magnetic hover.
+- Flecha/icono interno animado.
+- En mobile, CTA sticky inferior luego del hero.
+
+Importante:
+Los CTA pueden ser más agresivos visualmente, pero sin romper la sensación premium general.

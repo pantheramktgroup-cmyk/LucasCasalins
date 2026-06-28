@@ -1,0 +1,149 @@
+REFERENCIA PARA CREAR src/content/LandingCopy.js
+
+Este archivo es solo guía. Claude debe crear el archivo real en:
+src/content/LandingCopy.js
+
+Ejemplo de estructura recomendada:
+
+export const landingCopy = {
+  meta: {
+    title: "Lucas Casalins | Programa ARETÉ",
+    description: "Programa de transformación física para profesionales y dueños de negocio."
+  },
+
+  cta: {
+    primaryLabel: "QUIERO EMPEZAR",
+    href: "#booking",
+    ariaLabel: "Quiero empezar el Programa ARETÉ"
+  },
+
+  urgencyBar: {
+    text: "ÚLTIMOS CUPOS DISPONIBLES"
+  },
+
+  hero: {
+    eyebrow: "Programa para profesionales y dueños de negocio.",
+    title: "CÓMO BAJAR +15 kg DE GRASA CORPORAL en sólo 90 DÍAS",
+    highlight: "+15 kg DE GRASA CORPORAL",
+    subtitle: "El método que ayudó a más de 2.500 personas en 10 países diferentes a verse mejor, sentirse más seguras y rendir con más energía en su vida personal y profesional.",
+    supportText: "Sin pasar hambre con dietas extremas ni rutinas eternas en el gimnasio.",
+    logo: "/assets/brand/logo-arete.svg",
+    video: {
+      src: "/assets/hero/hero-video.mp4",
+      poster: "/assets/hero/hero-poster.webp"
+    }
+  },
+
+  successCases: {
+    eyebrow: "TESTIMONIOS",
+    title: "ALGUNOS DE NUESTROS CASOS DE ÉXITO",
+    items: [
+      {
+        name: "GONZALO",
+        description: "Abogado y Padre de 3, bajo 20kg en 3 meses de trabajo.",
+        image: "/assets/testimonials/case-01.webp"
+      }
+    ]
+  },
+
+  testimonials: {
+    items: [
+      {
+        quote: "Este programa me transformó por completo. Siendo madre de 3 hijos, creía que ya era tarde para recuperar mi cuerpo. Pero lo fácil que fue adaptar los entrenamientos a mi vida caótica y el acompañamiento real de Lucas, hicieron que lograra un físico de atleta, algo que jamás pensé que podría conseguir.",
+        name: "Silvana",
+        role: "Ejecutiva y Mamá de 3",
+        image: "/assets/testimonials/silvana-avatar.webp",
+        rating: 5
+      }
+    ]
+  },
+
+  pain: {
+    title: "SE EXACTAMENTE COMO SE SIENTE CUANDO...",
+    items: [
+      "Te mirás al espejo y no te gusta lo que ves.",
+      "La ropa que te gusta ya no te entra, y tener que usar ropa suelta para esconder la panza.",
+      "Sentís vergüenza frente a tu pareja y te asusta que te deje de desear o que tu inseguridad esté apagando la relación.",
+      "Sentís que tu imagen no comunica la autoridad que tenés.",
+      "Tu falta de energía impacta en tu rendimiento personal y profesional.",
+      "Haces dietas restrictivas, rutinas genéricas de internet o te anotas mil veces al gimnasio, pero que nada te funcione."
+    ],
+    bridge: "Si estás pasando por alguno de estos problemas este programa es exactamente lo que necesitas en este momento de tu vida."
+  },
+
+  outcomes: {
+    titlePrefix: "ESTO ES LO QUE VAS A LOGRAR CON",
+    titleHighlight: "ARETE PROGRAM FIT",
+    items: [
+      {
+        number: "1",
+        title: "Plan de Entrenamiento Personalizado",
+        text: "Un plan que se ajusta a tu rutina actual, sin rutinas eternas ni métodos extremos.",
+        image: "/assets/program/training.webp"
+      },
+      {
+        number: "2",
+        title: "Corrección técnica y biomecánica",
+        text: "Con técnica y biomecánica aplicada a tu entrenamiento Aprendés a entrenar mejor, no a entrenar más.",
+        image: "/assets/program/biomechanics.webp"
+      },
+      {
+        number: "3",
+        title: "Nutrición estratégica y personalizada",
+        text: "Un plan diseñado para tu contexto, alimentarte bien sin depender de dietas extremas, con lugar a tus eventos sociales.",
+        image: "/assets/program/nutrition.webp"
+      },
+      {
+        number: "4",
+        title: "App Personalizada y Comunidad",
+        text: "Planes personalizados con ajustes en tiempo real y Acompañamiento diario todo el año.",
+        image: "/assets/program/app-community.webp"
+      }
+    ]
+  },
+
+  method: {
+    title: "¿POR QUÉ EL PROGRAMA ARETÉ NO ES UN MÉTODO COMO CUALQUIER OTRO?",
+    intro: "Con tanta información en Instagram (influencers, rutinas mágicas, dietas extremas), es normal que sientas que ya \"probaste de todo\" y sigas sin ver el resultado real que buscás en el espejo.",
+    cards: [
+      "El Programa ARETÉ se creó para profesionales ocupados y empresarios que necesitan un plan real que se adapte a su agenda. Algo que puedas aplicar incluso sin tiempo de sobra o sin experiencia previa, y que te dé resultados visibles.",
+      "Con más de 15 años de experiencia y +2.000 transformaciones reales, no te hablo desde la teoría. Soy Licenciado en Alto Rendimiento, Profesor de Ed. Física y Atleta Campeón. Sé exactamente qué necesita tu cuerpo para cambiar.",
+      "Esta es la gran ventaja de ARETÉ: no es una dieta extrema ni una rutina genérica. Es un plan 100% personalizado y adaptado a tu vida real, para que logres una transformación física visible y sostenible en solo 90 días."
+    ]
+  },
+
+  about: {
+    eyebrow: "Conocé a Lucas Casalins",
+    title: "¿QUIÉN ES LUCAS CASALINS?",
+    image: "/assets/lucas/lucas-about.webp",
+    bullets: [
+      "Mi nombre es Lucas Casalins, soy Profesor de Educación Física, Licenciado en Alto Rendimiento Deportivo y atleta con más de 20 torneos regionales, nacionales e internacionales, incluyendo el 1er puesto en un Campeonato Sudamericano (NPC), un Campeonato Argentino (NPC), y un Campeonato Cordobés (NPC).",
+      "Además de competir, me formé con más de 65 certificaciones nacionales e internacionales en nutrición, entrenamiento y biomecánica, y soy parte de la cátedra de Biomecánica en la Facultad de Educación Física, lo que me permite unir la ciencia con la práctica real.",
+      "Con mi método ayudé a más de 2.500 personas en 10 países a transformar su cuerpo, recuperar energía y volver a sentirse seguras consigo mismas. Soy preparador de atletas de culturismo y he llevado a ganar mundiales y podios, campeones/as sudamericanos, campeones/as Argentinos y torneos regionales.",
+      "Sé lo que es mirarte al espejo y no gustarte, sentir que no tenés tiempo o frustrarte porque nada funciona. Lo viví en carne propia. Y por eso mi estilo es claro: no vendo humo, no prometo atajos ni resultados mágicos."
+    ],
+    finalStatement: "Ofrezco un sistema probado, basado en ciencia, experiencia real y un acompañamiento humano cercano, pensado para profesionales ocupados que buscan un cambio sostenible."
+  },
+
+  booking: {
+    eyebrow: "ESTAS A UN PASO DE CAMBIAR TU VIDA",
+    title: "Programa ARETÉ",
+    duration: "1 hr",
+    calendarEmbedUrl: "TODO: pegar aquí la URL real del calendario/formulario"
+  },
+
+  faq: {
+    eyebrow: "¿TENÉS ALGUNAS DUDAS?",
+    title: "Preguntas Frecuentes",
+    items: [
+      {
+        question: "¿Puedo lograr resultados si no tengo experiencia previa en el gimnasio?",
+        answer: "Sí. El programa está pensado para personas de todos los niveles. Si nunca entrenaste, empezás con un plan progresivo y ejercicios guiados paso a paso para que puedas aprender la técnica correcta, evitar lesiones y avanzar seguro."
+      }
+    ]
+  },
+
+  finalCta: {
+    buttonLabel: "QUIERO EMPEZAR"
+  }
+};

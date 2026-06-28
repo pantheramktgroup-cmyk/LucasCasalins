@@ -9,26 +9,35 @@ export default function Accordion({ items }) {
       {items.map((item, index) => {
         const isOpen = openIndex === index;
         return (
+          // faq-border-trace wrapper only active on the open item
           <div
             key={item.question}
-            className="overflow-hidden rounded-2xl border border-[var(--line)] bg-[var(--surface)] transition-colors hover:border-[var(--line-warm)]"
+            className={isOpen ? "faq-border-trace" : ""}
           >
-            <button
-              type="button"
-              onClick={() => setOpenIndex(isOpen ? -1 : index)}
-              className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
-            >
-              <span className="font-heading text-lg text-text">{item.question}</span>
-              <Plus
-                className={`h-5 w-5 shrink-0 text-orange transition-transform ${isOpen ? "rotate-45" : "rotate-0"}`}
-              />
-            </button>
             <div
-              className="grid transition-all duration-300"
-              style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
+              className={`overflow-hidden transition-all duration-300 ${
+                isOpen
+                  ? "rounded-[14px] border border-transparent bg-[var(--surface)]"
+                  : "rounded-2xl border border-[var(--line)] bg-[var(--surface)] hover:border-[var(--line-warm)]"
+              }`}
             >
-              <div className="overflow-hidden">
-                <p className="px-6 pb-6 text-base leading-relaxed text-muted">{item.answer}</p>
+              <button
+                type="button"
+                onClick={() => setOpenIndex(isOpen ? -1 : index)}
+                className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
+              >
+                <span className="font-heading text-lg text-text">{item.question}</span>
+                <Plus
+                  className={`h-5 w-5 shrink-0 transition-transform ${isOpen ? "rotate-45 text-[var(--red-bright)]" : "rotate-0 text-orange"}`}
+                />
+              </button>
+              <div
+                className="grid transition-all duration-300"
+                style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
+              >
+                <div className="overflow-hidden">
+                  <p className="px-6 pb-6 text-base leading-relaxed text-muted">{item.answer}</p>
+                </div>
               </div>
             </div>
           </div>

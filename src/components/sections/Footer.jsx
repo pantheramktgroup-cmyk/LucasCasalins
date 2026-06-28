@@ -35,16 +35,28 @@ const ICONS = {
 export default function Footer({ data, ui = {} }) {
   return (
     <footer className="border-t border-[var(--line)] py-10">
-      <div className="mx-auto flex w-full max-w-[1280px] flex-col items-center justify-between gap-6 px-5 md:flex-row md:px-8">
-        <img
-          src={data.logo}
-          alt={ui.logoAlt || "ARETÉ"}
-          className="h-9 w-auto object-contain opacity-75"
-          loading="lazy"
-          decoding="async"
-        />
+      {/*
+        3-column grid so the social icons are mathematically centered in the
+        footer, independent of the logo/copyright widths.
+        Mobile: stacks into a single centered column.
+      */}
+      <div className="mx-auto grid w-full max-w-[1280px] grid-cols-1 items-center gap-6 px-5 text-center md:grid-cols-3 md:px-8">
+        {/* Left: logo */}
+        <div className="flex justify-center md:justify-start">
+          <img
+            src={data.logo}
+            alt={ui.logoAlt || "ARETÉ"}
+            className="h-9 w-auto object-contain opacity-75"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
 
-        <nav className="flex items-center gap-2.5" aria-label="Redes sociales">
+        {/* Center: socials — perfectly centered in the middle column */}
+        <nav
+          className="mx-auto flex w-full items-center justify-center gap-[14px] md:w-auto md:gap-3"
+          aria-label="Redes sociales"
+        >
           {data.socials.map((social) => {
             const Icon = ICONS[social.label];
             return (
@@ -57,7 +69,9 @@ export default function Footer({ data, ui = {} }) {
                 className="group inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--line)] text-[var(--muted)] transition-all duration-300 hover:border-[var(--line-warm)] hover:text-[var(--orange-soft)]"
               >
                 {Icon ? (
-                  <Icon className="h-4 w-4" />
+                  <span className="inline-flex items-center justify-center">
+                    <Icon />
+                  </span>
                 ) : (
                   <span className="text-xs font-semibold">{social.label[0]}</span>
                 )}
@@ -66,7 +80,8 @@ export default function Footer({ data, ui = {} }) {
           })}
         </nav>
 
-        <p className="text-[0.68rem] uppercase tracking-[0.2em] text-[var(--muted)]">
+        {/* Right: copyright */}
+        <p className="text-[0.68rem] uppercase tracking-[0.2em] text-[var(--muted)] md:text-right">
           &copy; {new Date().getFullYear()} Programa ARETÉ
         </p>
       </div>

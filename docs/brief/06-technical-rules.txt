@@ -1,0 +1,292 @@
+REGLAS TÉCNICAS OBLIGATORIAS
+
+Proyecto:
+- React + Vite.
+- Tailwind CSS.
+- GSAP + @gsap/react + ScrollTrigger.
+- Landing one-page.
+- No crear varias páginas.
+
+============================================================
+REGLA MÁS IMPORTANTE: COPY CENTRALIZADO
+============================================================
+
+Todo el copy debe vivir únicamente en:
+
+src/content/LandingCopy.js
+
+Ningún componente .jsx puede tener copy hardcodeado.
+
+Permitido en componentes:
+- nombres de props.
+- aria-labels si vienen desde LandingCopy.js o constantes.
+- clases Tailwind.
+- lógica visual.
+
+No permitido en componentes:
+- titulares escritos a mano.
+- textos de botones escritos a mano.
+- FAQs escritas a mano.
+- testimonios escritos a mano.
+- nombres de personas escritos a mano.
+
+Los componentes deben consumir:
+import { landingCopy } from "../content/LandingCopy";
+
+o recibir props desde App.jsx.
+
+============================================================
+ESTRUCTURA DE ARCHIVOS ESPERADA
+============================================================
+
+src/
+  content/
+    LandingCopy.js
+
+  components/
+    layout/
+      PageShell.jsx
+      SmoothScrollProvider.jsx
+
+    ui/
+      MagneticCTA.jsx
+      ScrollArrow.jsx
+      RevealText.jsx
+      SectionLabel.jsx
+      PremiumCard.jsx
+      GlowBorder.jsx
+      Accordion.jsx
+
+    sections/
+      UrgencyBar.jsx
+      Hero.jsx
+      VideoProof.jsx
+      SuccessCases.jsx
+      TestimonialCarousel.jsx
+      PainSection.jsx
+      OutcomesSection.jsx
+      MethodSection.jsx
+      DifferentiatorsSection.jsx
+      AboutLucas.jsx
+      BookingSection.jsx
+      FAQSection.jsx
+      FinalCTA.jsx
+
+  hooks/
+    useReducedMotion.js
+    useIsMobile.js
+
+  lib/
+    gsap.js
+    constants.js
+
+  App.jsx
+  main.jsx
+  index.css
+
+============================================================
+LANDINGCOPY.JS — ESTRUCTURA ESPERADA
+============================================================
+
+Crear un objeto similar a este:
+
+export const landingCopy = {
+  meta: {
+    title: "Lucas Casalins | Programa ARETÉ",
+    description: "Programa de transformación física para profesionales y dueños de negocio."
+  },
+
+  cta: {
+    primaryLabel: "QUIERO EMPEZAR",
+    href: "#booking",
+    ariaLabel: "Quiero empezar el Programa ARETÉ"
+  },
+
+  urgencyBar: {
+    text: "ÚLTIMOS CUPOS DISPONIBLES"
+  },
+
+  hero: {
+    eyebrow: "Programa para profesionales y dueños de negocio.",
+    title: "CÓMO BAJAR +15 kg DE GRASA CORPORAL en sólo 90 DÍAS",
+    highlight: "+15 kg DE GRASA CORPORAL",
+    subtitle: "...",
+    supportText: "...",
+    logo: "/assets/brand/logo-arete.svg",
+    video: {
+      src: "/assets/hero/hero-video.mp4",
+      poster: "/assets/hero/hero-poster.webp"
+    }
+  },
+
+  successCases: {
+    eyebrow: "TESTIMONIOS",
+    title: "ALGUNOS DE NUESTROS CASOS DE ÉXITO",
+    items: [
+      {
+        name: "GONZALO",
+        description: "Abogado y Padre de 3, bajo 20kg en 3 meses de trabajo.",
+        image: "/assets/testimonials/case-01.webp"
+      }
+    ]
+  },
+
+  testimonials: {
+    items: [
+      {
+        quote: "...",
+        name: "Silvana",
+        role: "Ejecutiva y Mamá de 3",
+        image: "/assets/testimonials/silvana-avatar.webp",
+        rating: 5
+      }
+    ]
+  },
+
+  pain: {
+    title: "SE EXACTAMENTE COMO SE SIENTE CUANDO...",
+    items: ["..."],
+    bridge: "..."
+  },
+
+  outcomes: {
+    titlePrefix: "ESTO ES LO QUE VAS A LOGRAR CON",
+    titleHighlight: "ARETE PROGRAM FIT",
+    items: [
+      {
+        number: "1",
+        title: "Plan de Entrenamiento Personalizado",
+        text: "...",
+        image: "/assets/program/training.webp"
+      }
+    ]
+  },
+
+  method: {
+    title: "...",
+    intro: "...",
+    cards: ["..."]
+  },
+
+  about: {
+    eyebrow: "Conocé a Lucas Casalins",
+    title: "¿QUIÉN ES LUCAS CASALINS?",
+    image: "/assets/lucas/lucas-about.webp",
+    bullets: ["..."],
+    finalStatement: "..."
+  },
+
+  booking: {
+    eyebrow: "ESTAS A UN PASO DE CAMBIAR TU VIDA",
+    title: "Programa ARETÉ",
+    duration: "1 hr",
+    calendarEmbedUrl: "TODO: pegar aquí la URL real del embed"
+  },
+
+  faq: {
+    eyebrow: "¿TENÉS ALGUNAS DUDAS?",
+    title: "Preguntas Frecuentes",
+    items: [
+      {
+        question: "...",
+        answer: "..."
+      }
+    ]
+  },
+
+  finalCta: {
+    title: "",
+    text: "",
+    buttonLabel: "QUIERO EMPEZAR"
+  }
+};
+
+============================================================
+DEPENDENCIAS RECOMENDADAS
+============================================================
+
+Instalar:
+- gsap
+- @gsap/react
+- lenis
+- lucide-react
+
+Comandos sugeridos:
+npm install gsap @gsap/react lenis lucide-react
+
+============================================================
+TAILWIND
+============================================================
+
+Configurar:
+- fontFamily.heading = Sora
+- fontFamily.body = Manrope
+- colores por variables CSS o tokens.
+- sombras/glow para CTA.
+
+index.css:
+- Importar Google Fonts o usar link en index.html.
+- Definir variables CSS.
+- Definir base body.
+- Crear clases reutilizables:
+  - .section-padding
+  - .premium-container
+  - .glass-card
+  - .orange-glow
+  - .text-balance
+
+============================================================
+ACCESIBILIDAD
+============================================================
+
+- Botones y links con aria-label.
+- Contraste suficiente.
+- Focus-visible claro.
+- FAQ navegable con teclado.
+- No bloquear scroll nativo.
+- Respetar prefers-reduced-motion.
+
+============================================================
+PERFORMANCE
+============================================================
+
+- Imágenes con loading="lazy" salvo hero.
+- Imágenes con decoding="async".
+- Video con poster.
+- No cargar assets externos innecesarios.
+- Evitar animaciones pesadas en mobile.
+- Evitar re-render de carruseles innecesario.
+
+============================================================
+RESPONSIVE
+============================================================
+
+Desktop:
+- Layout premium, cinematográfico, con scroll animations más fuertes.
+
+Tablet:
+- Mantener buena lectura.
+- Reducir pinning si genera problemas.
+
+Mobile:
+- CTA sticky inferior después del hero.
+- Animaciones simples.
+- Cards verticales.
+- Sin horizontal scroll difícil de usar.
+- Texto legible.
+
+============================================================
+VALIDACIÓN FINAL
+============================================================
+
+Antes de terminar, Claude debe verificar:
+1. npm run dev funciona.
+2. npm run build funciona.
+3. Todo el copy está en LandingCopy.js.
+4. No hay copy hardcodeado en componentes .jsx.
+5. Todos los CTA consumen landingCopy.cta.
+6. La landing es one-page.
+7. ScrollTrigger está registrado correctamente.
+8. Las animaciones tienen cleanup.
+9. Mobile está cuidado.
+10. La estética se siente premium, ejecutiva y sofisticada.

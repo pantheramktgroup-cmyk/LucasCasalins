@@ -1,8 +1,8 @@
 import { useEffect } from "react";
-import MagneticCTA from "../ui/MagneticCTA";
 import SectionLabel from "../ui/SectionLabel";
+import { ScrollTrigger } from "../../lib/gsap";
 
-export default function BookingSection({ data, cta }) {
+export default function BookingSection({ data }) {
   // Load the GoHighLevel embed script once
   useEffect(() => {
     if (document.querySelector(`script[src="${data.calendarEmbedScript}"]`)) return;
@@ -25,22 +25,25 @@ export default function BookingSection({ data, cta }) {
           {data.title}
         </h2>
 
+        {data.subtitle ? (
+          <p className="mt-4 max-w-2xl text-[0.95rem] leading-relaxed text-[var(--muted)] md:text-[1rem]">
+            {data.subtitle}
+          </p>
+        ) : null}
+
         {/* Duration pill */}
         <p className="mt-5 inline-flex items-center gap-2 rounded-full border border-[var(--line-warm)] bg-[rgba(255,30,30,0.06)] px-4 py-1.5 text-[0.68rem] uppercase tracking-[0.22em] text-[var(--text)]">
           <span className="h-1.5 w-1.5 rounded-full bg-[var(--red)] shadow-[0_0_10px_rgba(255,30,30,0.8)]" />
-          {data.duration} · Consulta inicial sin cargo
+          {data.duration} · {data.durationNote}
         </p>
-
-        <div className="mt-6">
-          <MagneticCTA href="#booking-embed" label={cta.primaryLabel} ariaLabel={cta.ariaLabel} />
-        </div>
 
         {/* Calendar embed inside a dark, red-glow block */}
         <div
           className="relative mt-10 overflow-hidden rounded-[1.6rem] border border-[var(--red)] bg-[#070303] p-2 md:p-3"
           style={{
+            borderColor: "rgba(255,30,30,0.42)",
             boxShadow:
-              "0 0 0 1px rgba(255,30,30,0.12), 0 0 60px rgba(255,30,30,0.22), 0 18px 60px rgba(0,0,0,0.7)",
+              "0 0 0 1px rgba(255,30,30,0.08), 0 0 34px rgba(255,30,30,0.15), 0 16px 52px rgba(0,0,0,0.68)",
           }}
         >
           <div className="bg-dots-red pointer-events-none absolute inset-0 opacity-30" />
@@ -55,6 +58,7 @@ export default function BookingSection({ data, cta }) {
               style={{ width: "100%", border: "none", overflow: "hidden" }}
               scrolling="no"
               className="min-h-[700px] w-full"
+              onLoad={() => ScrollTrigger.refresh()}
             />
           </div>
         </div>

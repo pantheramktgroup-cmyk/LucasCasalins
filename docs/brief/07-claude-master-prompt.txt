@@ -1,0 +1,404 @@
+Actúa como un Senior Creative Developer especializado en React, Tailwind, GSAP, ScrollTrigger, performance frontend, diseño premium y landings high-ticket.
+
+Necesito que construyas desde cero una landing one-page para Lucas Casalins / Programa ARETÉ, usando React + Vite + Tailwind + GSAP.
+
+Antes de escribir código, leé todos los archivos dentro de:
+
+/docs/brief/
+
+Especialmente:
+- 00-README-QUE-CARGAR-Y-COMO-USAR.txt
+- 01-current-landing-copy.txt
+- 02-current-section-structure.txt
+- 03-assets-map.txt
+- 04-design-direction.txt
+- 05-animation-direction.txt
+- 06-technical-rules.txt
+
+También leé y aplicá las skills de GSAP disponibles en:
+- .claude/skills/
+- .agents/skills/
+
+Usá especialmente:
+- gsap-core
+- gsap-frameworks
+- gsap-react
+- gsap-scrolltrigger
+- gsap-timeline
+- gsap-performance
+- gsap-plugins
+- gsap-utils
+
+============================================================
+OBJETIVO GENERAL
+============================================================
+
+Crear una landing premium, sofisticada y fluida para Lucas Casalins, manteniendo exactamente el copy y la estructura comercial actual, pero rediseñando completamente la experiencia visual.
+
+El público objetivo no es fitness genérico. Es un público de profesionales ocupados, empresarios, CEOs, ejecutivos y personas de alto rendimiento que buscan una transformación física real, sostenible y personalizada.
+
+La landing debe sentirse como una mezcla entre:
+- Lanserhof: animaciones fluidas, elegancia, secciones con aire, lujo silencioso.
+- Biograph: salud premium, longevidad, alto rendimiento, estética editorial.
+- Executive Performance: claridad, foco ejecutivo, autoridad, performance personal.
+
+No debe parecer una landing fitness barata, agresiva o genérica. Debe sentirse high-ticket, premium, seria y confiable, pero manteniendo CTAs muy visibles y comerciales.
+
+============================================================
+STACK OBLIGATORIO
+============================================================
+
+- React
+- Vite
+- Tailwind CSS
+- GSAP
+- @gsap/react
+- ScrollTrigger
+- Lenis para smooth scroll si lo podés integrar de forma estable
+- lucide-react para iconos si necesitás iconografía simple
+
+============================================================
+ESTRUCTURA OBLIGATORIA
+============================================================
+
+Crear o respetar esta estructura:
+
+src/
+  content/
+    LandingCopy.js
+
+  components/
+    layout/
+      PageShell.jsx
+      SmoothScrollProvider.jsx
+
+    ui/
+      MagneticCTA.jsx
+      ScrollArrow.jsx
+      RevealText.jsx
+      SectionLabel.jsx
+      PremiumCard.jsx
+      GlowBorder.jsx
+      Accordion.jsx
+
+    sections/
+      UrgencyBar.jsx
+      Hero.jsx
+      VideoProof.jsx
+      SuccessCases.jsx
+      TestimonialCarousel.jsx
+      PainSection.jsx
+      OutcomesSection.jsx
+      MethodSection.jsx
+      DifferentiatorsSection.jsx
+      AboutLucas.jsx
+      BookingSection.jsx
+      FAQSection.jsx
+      FinalCTA.jsx
+
+  hooks/
+    useReducedMotion.js
+    useIsMobile.js
+
+  lib/
+    gsap.js
+    constants.js
+
+  App.jsx
+  main.jsx
+  index.css
+
+============================================================
+REGLA MÁS IMPORTANTE SOBRE COPY
+============================================================
+
+Todo el copy de la landing debe estar centralizado exclusivamente en:
+
+src/content/LandingCopy.js
+
+No puede haber textos hardcodeados dentro de componentes .jsx.
+
+Los componentes deben consumir todo desde LandingCopy.js.
+
+Tomá el copy exacto desde:
+/docs/brief/01-current-landing-copy.txt
+
+No lo resumas, no lo reescribas y no lo mejores.
+
+Si detectás texto duplicado por responsive/mobile, usar la versión canónica indicada en el archivo de copy.
+
+============================================================
+DISEÑO VISUAL
+============================================================
+
+Usar una estética premium executive-health.
+
+Paleta:
+- --bg: #050505
+- --bg-soft: #0B0B0A
+- --bg-warm: #120905
+- --surface: rgba(255,255,255,0.045)
+- --surface-strong: rgba(255,255,255,0.075)
+- --text: #F7F2EA
+- --muted: #A9A39A
+- --muted-2: #746F67
+- --orange: #FF6A00
+- --orange-soft: #FF8A2A
+- --copper: #C86B28
+- --copper-dark: #6A2E0A
+- --line: rgba(255,255,255,0.14)
+- --line-warm: rgba(255,106,0,0.32)
+- --danger: #E50914
+
+Tipografías:
+- Importar desde Google Fonts:
+  - Sora para headings
+  - Manrope para body
+
+En index.css:
+- Definir variables CSS.
+- Crear base styles.
+- Usar antialiasing.
+- Fondo negro con gradientes radiales muy sutiles.
+- Evitar fondos planos aburridos.
+
+Estilo de layout:
+- Max width general: 1180px / 1280px según sección.
+- Mucho espacio vertical.
+- Headings grandes y compactos.
+- Cards con borde fino, blur, gradiente sutil y hover premium.
+- Imágenes con masks, border radius elegante y overlays oscuros.
+- Los números grandes del programa pueden mantenerse, pero con composición más premium.
+- Usar líneas finas, divisores, microtextos uppercase y detalles en cobre/naranja.
+- Evitar bloques demasiado “plantilla”.
+- Evitar naranja excesivo en grandes superficies; usarlo como acento y CTA.
+
+============================================================
+ANIMACIONES GENERALES
+============================================================
+
+Usar GSAP con @gsap/react.
+
+Crear src/lib/gsap.js para registrar:
+- gsap
+- ScrollTrigger
+- useGSAP si corresponde
+
+Usar useGSAP en cada sección animada.
+Usar refs y scope.
+No usar selectores globales sin scope.
+Limpiar correctamente.
+Usar ScrollTrigger.refresh() cuando sea necesario.
+Respetar prefers-reduced-motion.
+
+Animaciones deseadas:
+- Page intro con logo ARETÉ revelándose de forma sobria.
+- Hero con headline revelado por líneas/palabras usando y + opacity + clip-path.
+- Subrayado naranja animado en la frase destacada.
+- Video principal con reveal por mask y leve parallax.
+- CTAs con glow, pulso, magnetic hover y shimmer.
+- Flechas hacia abajo con rebote elegante.
+- Secciones que entran como escenas, no como simples bloques.
+- Imágenes con parallax lento.
+- Cards con stagger.
+- Testimonios con carrusel fluido.
+- Bloques de dolor con aparición progresiva.
+- Outcomes con scroll narrativo/pinned section si queda bien.
+- About Lucas con imagen parallax y bullets revelados por scroll.
+- FAQ accordion con apertura suave.
+
+============================================================
+CTA Y BOTONES
+============================================================
+
+Crear un componente MagneticCTA.jsx reutilizable.
+
+Debe tener:
+- Fondo naranja #FF6A00.
+- Texto blanco.
+- Borde/halo con glow naranja.
+- Pulso sutil constante.
+- Brillo/shimmer que cruza el botón.
+- Icono/flecha interna con movimiento.
+- Hover con scale leve, sombra más fuerte y efecto magnetic.
+- Active state.
+- Accesibilidad correcta.
+- En mobile, CTA sticky inferior después del hero.
+
+Los CTAs deben ser imposibles de no ver, pero sin romper la estética premium.
+
+También crear ScrollArrow.jsx:
+- Flecha doble hacia abajo.
+- Color naranja.
+- Rebote vertical.
+- Glow sutil.
+- Debe guiar visualmente al usuario a seguir leyendo.
+
+============================================================
+SECCIONES A CONSTRUIR
+============================================================
+
+1. UrgencyBar
+- Barra superior fija o sticky.
+- Texto desde LandingCopy.js.
+- Fondo rojo.
+- Texto blanco.
+- Debe sentirse urgente, pero prolijo.
+
+2. Hero
+- Logo arriba.
+- Eyebrow.
+- Headline principal.
+- Frase destacada con naranja y subrayado animado.
+- Subtítulo.
+- Video principal dentro de frame premium.
+- CTA principal.
+- Flecha hacia abajo.
+- Fondo negro premium con gradientes sutiles.
+
+3. VideoProof
+- Usar video o bloque visual actual.
+- Debe sentirse editorial.
+- Frame con borde fino, glow muy leve y sombra.
+
+4. SuccessCases
+- Mantener casos de éxito actuales.
+- Rediseñarlos como galería premium.
+- En desktop puede ser grid/carrusel horizontal.
+- Usar ScrollTrigger para reveal.
+- Imágenes con overlay sutil y hover.
+
+5. TestimonialCarousel
+- Mantener testimonios escritos.
+- Crear carousel premium.
+- Cards grandes, borde fino, estrellas, nombre, rol.
+- Controles elegantes.
+- Animación suave.
+- No hardcodear textos.
+
+6. PainSection
+- Título desde LandingCopy.js.
+- Lista de dolores con íconos de X.
+- Animación progresiva por scroll.
+- El fondo puede oscurecerse más.
+- Debe sentirse emocional e intenso, pero no vulgar.
+
+7. OutcomesSection
+- Título: “Esto es lo que vas a lograr...” desde LandingCopy.
+- Bloques numerados 1-4.
+- Rediseñar con layout editorial.
+- Números gigantes en naranja/cobre.
+- Imagen oscura con overlay.
+- Texto claro.
+- Animaciones por scroll, alternando izquierda/derecha.
+- En mobile, convertir a cards verticales.
+
+8. MethodSection / Differentiators
+- Sección “¿Por qué el Programa ARETÉ no es un método como cualquier otro?”
+- Cards diferenciales actuales.
+- Diseño con 3 cards premium.
+- Icono circular naranja arriba.
+- Borde fino naranja/cobre.
+- Hover con glow interno y movimiento leve.
+
+9. AboutLucas
+- Imagen de Lucas grande, elegante, con mask/parallax.
+- Texto de autoridad.
+- Bullets actuales.
+- Composición editorial: imagen izquierda, texto derecha.
+- En mobile, imagen arriba y texto debajo.
+- Animar bullets con stagger.
+
+10. BookingSection
+- Sección de conversión fuerte.
+- Título “Programa ARETÉ” o copy actual.
+- Integrar el calendario/formulario actual.
+- Usar un contenedor premium.
+- Fondo con gradiente cobre oscuro.
+- CTA visual antes del embed.
+- Debe sentirse como el paso final de aplicación, no como formulario genérico.
+- Si falta la URL real del embed, dejar TODO claro en LandingCopy.js.
+
+11. FAQSection
+- Accordion premium.
+- Preguntas y respuestas desde LandingCopy.js.
+- Apertura suave.
+- Borde naranja/cobre.
+- Hover sutil.
+- No dejar todos abiertos por defecto salvo que el copy actual lo requiera.
+
+12. FinalCTA
+- Cierre fuerte.
+- Copy desde LandingCopy.
+- Botón principal.
+- Flecha o microanimación.
+- Fondo oscuro premium.
+
+============================================================
+RESPONSIVE
+============================================================
+
+Desktop:
+- Visual cinematográfico.
+- Headings grandes.
+- Scroll animations fuertes.
+
+Tablet:
+- Mantener estructura fluida.
+- Reducir pinned animations si afectan.
+
+Mobile:
+- Priorizar velocidad y claridad.
+- CTA sticky inferior.
+- Animaciones más simples.
+- No usar horizontal scroll complicado.
+- Imágenes optimizadas.
+- Textos legibles.
+
+============================================================
+PERFORMANCE
+============================================================
+
+- Lazy load en imágenes que no estén en hero.
+- Usar loading="lazy".
+- Usar decoding="async".
+- Optimizar video: poster, muted, playsInline, loop si corresponde.
+- No crear animaciones infinitas pesadas salvo CTAs/flechas.
+- Evitar animar propiedades costosas como width/height/top/left cuando pueda usarse transform/opacity.
+- Usar will-change solo donde tenga sentido.
+- Respetar prefers-reduced-motion.
+
+============================================================
+NO HACER
+============================================================
+
+- No hardcodear copy en componentes.
+- No cambiar el copy.
+- No usar lorem ipsum.
+- No hacer una landing fitness genérica.
+- No llenar todo de naranja.
+- No crear animaciones caóticas.
+- No usar jQuery.
+- No usar Bootstrap.
+- No duplicar secciones innecesarias.
+- No romper mobile.
+- No dejar errores de build.
+- No usar imágenes externas si ya existen assets locales.
+
+============================================================
+ENTREGABLE FINAL
+============================================================
+
+Implementá todos los archivos necesarios.
+
+Al finalizar, verificá:
+1. npm run dev funciona.
+2. npm run build funciona.
+3. Todo el copy está en LandingCopy.js.
+4. Los componentes no tienen copy hardcodeado.
+5. La landing es una sola página.
+6. Todos los CTA usan la misma URL definida en LandingCopy.js.
+7. Las animaciones usan GSAP correctamente.
+8. ScrollTrigger está registrado y limpio.
+9. Mobile está cuidado.
+10. La estética se siente premium, ejecutiva y sofisticada.

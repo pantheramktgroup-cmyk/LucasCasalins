@@ -1,0 +1,94 @@
+ESTRUCTURA ACTUAL DE LA LANDING
+
+Regla para Claude:
+Mantener la estructura comercial, el orden general y el flujo de venta, pero rediseñar completamente la composición visual interna, las animaciones, los layouts y la experiencia de scroll.
+
+Estructura actual detectada:
+
+1. Barra superior de urgencia
+- Texto: ÚLTIMOS CUPOS DISPONIBLES
+- Actualmente roja y visible en todo el recorrido.
+- Mantener como sticky/fixed si no afecta experiencia.
+
+2. Hero
+- Logo ARETÉ.
+- Eyebrow: Programa para profesionales y dueños de negocio.
+- Headline principal: bajar +15kg de grasa corporal en 90 días.
+- Subtítulo de prueba social y beneficios.
+- Refuerzo: sin hambre, sin dietas extremas, sin rutinas eternas.
+- Video principal.
+- CTA principal.
+- Flecha hacia abajo.
+
+3. Video / prueba principal
+- Video dentro de un frame.
+- Mantener como pieza central del hero o inmediatamente debajo.
+- Debe verse más premium, integrado en un contenedor elegante.
+
+4. Casos de éxito visuales
+- Eyebrow: TESTIMONIOS.
+- Título: ALGUNOS DE NUESTROS CASOS DE ÉXITO.
+- Galería/carrusel de imágenes de transformación.
+- CTA debajo.
+
+5. Testimonios escritos
+- Carrusel de testimonios con estrellas, frase, nombre, rol/foto.
+- Mantener testimonios del copy.
+- Mejorar legibilidad, controles y estética.
+
+6. Dolores / identificación emocional
+- Título: SE EXACTAMENTE COMO SE SIENTE CUANDO...
+- Lista de dolores con X.
+- Puente: si estás pasando por alguno de estos problemas...
+
+7. Sección resultados / outcomes
+- Título: ESTO ES LO QUE VAS A LOGRAR CON ARETE PROGRAM FIT.
+- Cuatro bloques numerados:
+  1. Plan de Entrenamiento Personalizado.
+  2. Corrección técnica y biomecánica.
+  3. Nutrición estratégica y personalizada.
+  4. App Personalizada y Comunidad.
+- CTA.
+
+8. Diferenciación / por qué no es otro método
+- Título: ¿POR QUÉ EL PROGRAMA ARETÉ NO ES UN MÉTODO COMO CUALQUIER OTRO?
+- Texto introductorio sobre información en Instagram.
+- Tres cards diferenciales.
+
+9. Autoridad / quién es Lucas
+- Título: ¿QUIÉN ES LUCAS CASALINS?
+- Foto principal de Lucas.
+- Bullets de autoridad, formación, resultados, experiencia personal.
+- Texto final destacado.
+- CTA.
+
+10. Booking / agenda
+- Eyebrow: ESTAS A UN PASO DE CAMBIAR TU VIDA.
+- Título: Programa ARETÉ.
+- Embed de calendario/formulario.
+
+11. FAQ
+- Eyebrow: ¿TENÉS ALGUNAS DUDAS?
+- Título: Preguntas Frecuentes.
+- Accordion con 6 preguntas.
+
+12. CTA final
+- Cierre simple con CTA principal.
+- Puede estar integrado luego de FAQ o como bloque final.
+
+Recomendación de nueva estructura visual:
+
+1. UrgencyBar
+2. Hero cinematográfico + video + CTA
+3. ProofStrip / micro prueba social corta
+4. SuccessCases visuales
+5. TestimonialCarousel
+6. PainSection
+7. OutcomesSection con scroll narrativo
+8. MethodSection / Differentiators
+9. AboutLucas
+10. BookingSection
+11. FAQSection
+12. FinalCTA
+
+No convertir la landing en muchas páginas. Debe ser one-page.

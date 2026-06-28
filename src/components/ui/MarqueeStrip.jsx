@@ -6,7 +6,7 @@ export default function MarqueeStrip({ items = [], className = "" }) {
 
   return (
     <div
-      className={`relative overflow-hidden border-y border-[var(--line)] bg-[linear-gradient(90deg,rgba(255,30,30,0.1),rgba(0,0,0,0.4),rgba(255,30,30,0.1))] py-4 ${className}`}
+      className={`marquee-section relative overflow-hidden border-y border-[var(--line)] bg-[linear-gradient(90deg,rgba(255,30,30,0.1),rgba(0,0,0,0.4),rgba(255,30,30,0.1))] py-4 ${className}`}
       aria-hidden="true"
     >
       <div className="flex w-max animate-marquee items-center will-change-transform">

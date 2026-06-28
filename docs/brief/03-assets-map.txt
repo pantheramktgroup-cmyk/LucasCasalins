@@ -1,0 +1,167 @@
+MAPA DE ASSETS ESPERADOS
+
+Regla para Claude:
+Usar estos paths dentro de LandingCopy.js y componentes. No inventar URLs externas si los assets locales existen.
+
+Regla para Ezequiel:
+Los archivos listados abajo son imágenes/videos que vos tenés que cargar dentro de public/assets.
+Claude no crea estas imágenes. Claude solo crea el código que las usa.
+
+============================================================
+ESTRUCTURA RECOMENDADA
+============================================================
+
+public/
+  assets/
+    brand/
+      logo-arete.svg
+      favicon.svg
+
+    hero/
+      hero-video.mp4
+      hero-poster.webp
+
+    lucas/
+      lucas-main.webp
+      lucas-about.webp
+      lucas-training.webp
+
+    testimonials/
+      case-01.webp
+      case-02.webp
+      case-03.webp
+      case-04.webp
+      case-05.webp
+      case-06.webp
+      case-07.webp
+      case-08.webp
+      case-09.webp
+      case-10.webp
+      case-11.webp
+      case-12.webp
+      case-13.webp
+      case-14.webp
+      case-15.webp
+      case-16.webp
+      case-17.webp
+      case-18.webp
+      case-19.webp
+      case-20.webp
+      case-21.webp
+      case-22.webp
+
+    program/
+      training.webp
+      biomechanics.webp
+      nutrition.webp
+      app-community.webp
+
+    icons/
+      arrow.svg
+
+============================================================
+QUÉ DEBE IR EN CADA CARPETA
+============================================================
+
+/assets/brand/logo-arete.svg
+Logo de Team ARETÉ / Programa ARETÉ.
+Ideal: SVG blanco o versión premium simple.
+Si solo tenés PNG, usar /assets/brand/logo-arete.png y actualizar el asset map.
+
+/assets/brand/favicon.svg
+Favicon de la web.
+Puede ser logo simplificado.
+
+/assets/hero/hero-video.mp4
+Video principal actual del hero.
+Debe estar optimizado para web.
+Recomendado: mp4, H.264, peso bajo, muted, playsInline.
+
+/assets/hero/hero-poster.webp
+Imagen poster del video, visible antes de cargar/reproducir.
+Puede ser una captura del video.
+
+/assets/lucas/lucas-main.webp
+Foto principal de Lucas para hero o bloque fuerte.
+Debe verse premium/editorial.
+
+/assets/lucas/lucas-about.webp
+Foto de Lucas para sección “Quién es Lucas Casalins”.
+Puede ser la imagen actual de Lucas en escenario/competición.
+
+/assets/lucas/lucas-training.webp
+Foto de Lucas entrenando o en contexto fitness premium.
+
+/assets/testimonials/case-01.webp ... case-22.webp
+Imágenes de casos de éxito / transformaciones.
+Usar tantas como existan.
+No es obligatorio tener exactamente 22, pero si el copy lista 22 casos, idealmente cargar 22 imágenes.
+Cada item en LandingCopy.js debe referenciar su imagen correspondiente.
+
+Sugerencia de correspondencia:
+case-01.webp  = Gonzalo
+case-02.webp  = Jorge
+case-03.webp  = Silvana
+case-04.webp  = Javier
+case-05.webp  = Milagros
+case-06.webp  = Gastón
+case-07.webp  = Sol
+case-08.webp  = Julieta
+case-09.webp  = Francisco
+case-10.webp  = Juanchi
+case-11.webp  = Juan Pablo
+case-12.webp  = Matías
+case-13.webp  = Karime
+case-14.webp  = Monica
+case-15.webp  = Federico
+case-16.webp  = Sofía
+case-17.webp  = Romina
+case-18.webp  = Jesús
+case-19.webp  = Maxi
+case-20.webp  = Belén
+case-21.webp  = Brandon
+case-22.webp  = Mariano
+
+/assets/program/training.webp
+Imagen para el bloque “Plan de Entrenamiento Personalizado”.
+Ejemplo: Lucas entrenando, físico premium, gimnasio, planificación.
+
+/assets/program/biomechanics.webp
+Imagen para el bloque “Corrección técnica y biomecánica”.
+Ejemplo: entrenamiento técnico, dominadas, espalda, corrección de movimiento.
+
+/assets/program/nutrition.webp
+Imagen para el bloque “Nutrición estratégica y personalizada”.
+Ejemplo: meal prep, comida saludable, planificación nutricional.
+
+/assets/program/app-community.webp
+Imagen para el bloque “App Personalizada y Comunidad”.
+Ejemplo: Lucas en entorno aspiracional, comunidad, app, lifestyle premium.
+
+============================================================
+SI FALTAN IMÁGENES
+============================================================
+
+Si no tenés alguna imagen:
+- Mantener el item de copy.
+- En LandingCopy.js dejar image: null.
+- El componente debe tener fallback elegante: gradiente oscuro, número grande, textura sutil.
+- No usar imágenes random de internet.
+
+============================================================
+URLS / CTAS
+============================================================
+
+CTA principal:
+Usar href: "#booking" si el objetivo es bajar a agenda.
+
+Si existe un link externo real de WhatsApp, GHL o calendario, reemplazarlo en LandingCopy.js:
+cta: {
+  label: "QUIERO EMPEZAR",
+  href: "#booking"
+}
+
+Embed calendario:
+booking: {
+  calendarEmbedUrl: "TODO: pegar aquí la URL real del embed"
+}
