@@ -275,13 +275,13 @@ export default function ThankYouPage() {
               </h3>
 
               <div className="mt-4 grid grid-cols-1 gap-3 md:mt-5 md:grid-cols-2 md:gap-4">
-                <article className="card-border-trace overflow-hidden rounded-2xl border border-[var(--line)] bg-[rgba(12,12,12,0.9)] p-5 md:p-6">
+                <article className="thankyou-checklist-card card-border-trace overflow-hidden rounded-2xl border border-[var(--line)] bg-[rgba(12,12,12,0.9)] p-5 md:p-6">
                   <p className="font-heading text-[0.8rem] font-semibold uppercase tracking-[0.18em] text-[var(--red-bright)]">
                     {thankYouCopy.labels.positiveTitle}
                   </p>
-                  <ul className="mt-4 space-y-3">
+                  <ul className="thankyou-checklist-list mt-4 space-y-3">
                     {thankYouCopy.callChecklist.positive.map((item) => (
-                      <li key={item} data-ty-check-item className="flex items-center justify-center gap-2.5 text-center text-[0.9rem] leading-[1.58] text-[rgba(255,244,234,0.86)]">
+                      <li key={item} data-ty-check-item className="thankyou-checklist-item flex items-center gap-2.5 text-[0.9rem] leading-[1.58] text-[rgba(255,244,234,0.86)]">
                         <Check className="h-4 w-4 shrink-0 text-[var(--red)]" aria-hidden="true" />
                         <span>{item}</span>
                       </li>
@@ -289,13 +289,13 @@ export default function ThankYouPage() {
                   </ul>
                 </article>
 
-                <article className="card-border-trace overflow-hidden rounded-2xl border border-[var(--line)] bg-[rgba(12,12,12,0.9)] p-5 md:p-6">
+                <article className="thankyou-checklist-card card-border-trace overflow-hidden rounded-2xl border border-[var(--line)] bg-[rgba(12,12,12,0.9)] p-5 md:p-6">
                   <p className="font-heading text-[0.8rem] font-semibold uppercase tracking-[0.18em] text-[var(--red-bright)]">
                     {thankYouCopy.labels.negativeTitle}
                   </p>
-                  <ul className="mt-4 space-y-3">
+                  <ul className="thankyou-checklist-list mt-4 space-y-3">
                     {thankYouCopy.callChecklist.negative.map((item) => (
-                      <li key={item} data-ty-check-item className="flex items-center justify-center gap-2.5 text-center text-[0.9rem] leading-[1.58] text-[rgba(255,244,234,0.86)]">
+                      <li key={item} data-ty-check-item className="thankyou-checklist-item flex items-center gap-2.5 text-[0.9rem] leading-[1.58] text-[rgba(255,244,234,0.86)]">
                         <X className="h-4 w-4 shrink-0 text-[var(--red)]" aria-hidden="true" />
                         <span>{item}</span>
                       </li>

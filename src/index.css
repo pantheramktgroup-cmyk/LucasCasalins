@@ -675,6 +675,24 @@ body {
   margin-bottom: 84px;
 }
 
+.thankyou-checklist-card {
+  text-align: center;
+}
+
+.thankyou-checklist-list {
+  text-align: left;
+}
+
+.thankyou-checklist-item {
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.thankyou-checklist-item span {
+  text-align: left;
+}
+
 .thankyou-cases-section {
   padding-top: 0;
 }
