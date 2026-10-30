@@ -12,6 +12,11 @@ export default function BookingSection({ data, landingVariant }) {
     url.searchParams.set("landing_variant", landingVariant);
     return url.toString();
   }, [data.calendarEmbedUrl, landingVariant]);
+  const calendarExternalUrl = useMemo(() => {
+    const url = new URL(data.calendarExternalUrl ?? data.calendarEmbedUrl);
+    url.searchParams.set("landing_variant", landingVariant);
+    return url.toString();
+  }, [data.calendarExternalUrl, data.calendarEmbedUrl, landingVariant]);
 
   useEffect(() => {
     const fallbackTimer = window.setTimeout(() => {
@@ -79,7 +84,7 @@ export default function BookingSection({ data, landingVariant }) {
           {showCalendarFallback && (
             <div className="relative z-10 flex justify-center px-3 py-3">
               <a
-                href={calendarEmbedUrl}
+                href={calendarExternalUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full border border-[var(--line-warm)] bg-[#120909]/95 px-4 py-2 text-center text-xs font-semibold text-[var(--text)] shadow-lg transition-colors hover:border-[var(--red)] hover:text-white"

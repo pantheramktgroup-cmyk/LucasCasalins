@@ -271,6 +271,8 @@ export const landingCopy = {
     durationNote: "Consulta inicial sin cargo",
     calendarEmbedUrl:
       "https://links.iqautomated.io/widget/booking/hKx898rnz0pwlufZXQuQ",
+    calendarExternalUrl:
+      "https://api.pantheramktgroup.com/widget/booking/hKx898rnz0pwlufZXQuQ",
     calendarEmbedId: "hKx898rnz0pwlufZXQuQ_1782073144314",
     calendarEmbedScript: "https://links.iqautomated.io/js/form_embed.js",
   },
